@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigDAG", "DigDAG\DigDAG.csproj", "{CE46154D-6E48-440A-BF7A-DBFBB44E3D76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigDAGTest", "DigDAGTest\DigDAGTest.csproj", "{A3D26ABE-7F3A-41F9-B67C-078EE88B571C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE46154D-6E48-440A-BF7A-DBFBB44E3D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE46154D-6E48-440A-BF7A-DBFBB44E3D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE46154D-6E48-440A-BF7A-DBFBB44E3D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE46154D-6E48-440A-BF7A-DBFBB44E3D76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3D26ABE-7F3A-41F9-B67C-078EE88B571C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D26ABE-7F3A-41F9-B67C-078EE88B571C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D26ABE-7F3A-41F9-B67C-078EE88B571C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D26ABE-7F3A-41F9-B67C-078EE88B571C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {489DE31A-490F-4F77-AA70-97F1950AEC09}
+	EndGlobalSection
+EndGlobal
