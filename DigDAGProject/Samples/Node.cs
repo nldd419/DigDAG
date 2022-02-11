@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 using DigDAG;
 
-namespace DigDAGTest.Models
+namespace Samples
 {
-    internal class TestNode : IDagNode
+    internal class Node : IDagNode
     {
-        public TestNode(uint id)
+        public Node(uint id)
         {
             Id = id;
         }
 
         public uint Id { get; private set; }
 
-        private readonly List<TestNode> nextNodes = new List<TestNode>(); 
+        private readonly List<Node> nextNodes = new List<Node>();
 
         public IEnumerable<IDagNode> Nexts => nextNodes;
 
-        public void AddChild(TestNode node)
+        public void AddChild(Node node)
         {
             nextNodes.Add(node);
         }
