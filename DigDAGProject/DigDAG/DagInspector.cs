@@ -499,12 +499,21 @@ namespace DigDAG
         public static bool Verify(IDagNode firstNode)
         {
             HashSet<NodeInfo> checkedNodes = new HashSet<NodeInfo>();
-
+            Stack<DepthStackInfo> depthStack = new Stack<DepthStackInfo>();
+            
             bool prune = false;
             PruneConditionFunc pruneCondition = (node, depth, index, parent) =>
             {
                 // Return true if it has already found any cycles.
-                if (prune) return prune;
+                if (prune) return true;
+
+                // Remove the nodes which is in depth more than the current node.
+                // This works only if we inspect the tree by depth-first search.
+                while (depthStack.Count > 0 && depthStack.Peek().Depth >= depth)
+                {
+                    DepthStackInfo depthStackInfo = depthStack.Pop();
+                    checkedNodes.Remove(depthStackInfo.NodeInfo);
+                }
 
                 NodeInfo nodeInfo;
                 if(parent != null)
@@ -521,10 +530,13 @@ namespace DigDAG
                 if (checkedNodes.Contains(nodeInfo))
                 {
                     prune = true;
+                    checkedNodes.Clear();
+                    depthStack.Clear();
                 }
                 else
                 {
                     checkedNodes.Add(nodeInfo);
+                    depthStack.Push(new DepthStackInfo(depth, nodeInfo));
                 }
 
                 return prune;
@@ -534,5 +546,10 @@ namespace DigDAG
 
             return !prune;
         }
+
+        /// <summary>
+        /// A node information at a specific depth at the moment.
+        /// </summary>
+        private record DepthStackInfo(ulong Depth, NodeInfo NodeInfo);
     }
 }

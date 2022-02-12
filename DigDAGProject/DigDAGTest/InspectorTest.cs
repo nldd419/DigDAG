@@ -562,6 +562,54 @@ namespace DigDAGTest
                     DagInspector.InspectAll(root, action, depthFirstSearch: false);
                 }
             }
+
+            public class DAGWithDuplicateSharingChildTwiceTest
+            {
+                public DAGWithDuplicateSharingChildTwiceTest()
+                {
+                    root = TestNodeFactory.CreateDAGWithDuplicateSharingChildTwice();
+                }
+
+                private TestNode root;
+
+                [Fact]
+                public void CallDepthFirstSearchInCorrectOrder()
+                {
+                    List<TestNodeInfo> callOrder = new List<TestNodeInfo>
+                    {
+                        new TestNodeInfo(0, 0, AssertUtils.NO_INDEX, AssertUtils.PARENT_ID_NONE),
+                        new TestNodeInfo(1, 1, 0, 0),
+                        new TestNodeInfo(2, 2, 0, 1),
+                        new TestNodeInfo(2, 2, 1, 1),
+                        new TestNodeInfo(1, 1, 1, 0),
+                        new TestNodeInfo(2, 2, 0, 1),
+                        new TestNodeInfo(2, 2, 1, 1),
+                    };
+
+                    DagInspector.InspectAction action = AssertUtils.CreateCallOrderEqualsAction(callOrder);
+
+                    DagInspector.InspectAll(root, action, depthFirstSearch: true);
+                }
+
+                [Fact]
+                public void CallBreadthFirstSearchInCorrectOrder()
+                {
+                    List<TestNodeInfo> callOrder = new List<TestNodeInfo>
+                    {
+                        new TestNodeInfo(0, 0, AssertUtils.NO_INDEX, AssertUtils.PARENT_ID_NONE),
+                        new TestNodeInfo(1, 1, 0, 0),
+                        new TestNodeInfo(1, 1, 1, 0),
+                        new TestNodeInfo(2, 2, 0, 1),
+                        new TestNodeInfo(2, 2, 1, 1),
+                        new TestNodeInfo(2, 2, 0, 1),
+                        new TestNodeInfo(2, 2, 1, 1),
+                    };
+
+                    DagInspector.InspectAction action = AssertUtils.CreateCallOrderEqualsAction(callOrder);
+
+                    DagInspector.InspectAll(root, action, depthFirstSearch: false);
+                }
+            }
         }
 
         public class ConditionTest
@@ -753,6 +801,22 @@ namespace DigDAGTest
                 public DAGWithManyParnetSharingChild()
                 {
                     root = TestNodeFactory.CreateDAGWithManyParnetSharingChild();
+                }
+
+                private TestNode root;
+
+                [Fact]
+                public void MustBeValid()
+                {
+                    Assert.True(DagInspector.Verify(root));
+                }
+            }
+
+            public class DAGWithDuplicateSharingChildTwiceTest
+            {
+                public DAGWithDuplicateSharingChildTwiceTest()
+                {
+                    root = TestNodeFactory.CreateDAGWithDuplicateSharingChildTwice();
                 }
 
                 private TestNode root;
