@@ -7,13 +7,13 @@ using DigDAG;
 
 namespace DigDAGTest
 {
-    public class InspectorTest
+    namespace InspectorTest
     {
-        public class CallOrderTest
+        namespace CallOrder
         {
-            public class TreeTest
+            public class Tree
             {
-                public TreeTest()
+                public Tree()
                 {
                     root = TestNodeFactory.CreateTree();
                 }
@@ -75,9 +75,9 @@ namespace DigDAGTest
                 }
             }
 
-            public class LeftDeepTreeTest
+            public class LeftDeepTree
             {
-                public LeftDeepTreeTest()
+                public LeftDeepTree()
                 {
                     root = TestNodeFactory.CreateLeftDeepTree();
                 }
@@ -147,9 +147,9 @@ namespace DigDAGTest
                 }
             }
 
-            public class RightDeepTreeTest
+            public class RightDeepTree
             {
-                public RightDeepTreeTest()
+                public RightDeepTree()
                 {
                     root = TestNodeFactory.CreateRightDeepTree();
                 }
@@ -219,9 +219,9 @@ namespace DigDAGTest
                 }
             }
 
-            public class BothSidesDeepTreeTest
+            public class BothSidesDeepTree
             {
-                public BothSidesDeepTreeTest()
+                public BothSidesDeepTree()
                 {
                     root = TestNodeFactory.CreateBothSidesDeepTree();
                 }
@@ -307,9 +307,9 @@ namespace DigDAGTest
                 }
             }
 
-            public class CenterDeepTreeTest
+            public class CenterDeepTree
             {
-                public CenterDeepTreeTest()
+                public CenterDeepTree()
                 {
                     root = TestNodeFactory.CreateCenterDeepTree();
                 }
@@ -395,9 +395,9 @@ namespace DigDAGTest
                 }
             }
 
-            public class DAGWithSharedChildTest
+            public class DAGWithSharedChild
             {
-                public DAGWithSharedChildTest()
+                public DAGWithSharedChild()
                 {
                     root = TestNodeFactory.CreateDAGWithSharedChild();
                 }
@@ -563,9 +563,9 @@ namespace DigDAGTest
                 }
             }
 
-            public class DAGWithDuplicateSharingChildTwiceTest
+            public class DAGWithDuplicateSharingChildTwice
             {
-                public DAGWithDuplicateSharingChildTwiceTest()
+                public DAGWithDuplicateSharingChildTwice()
                 {
                     root = TestNodeFactory.CreateDAGWithDuplicateSharingChildTwice();
                 }
@@ -612,11 +612,11 @@ namespace DigDAGTest
             }
         }
 
-        public class ConditionTest
+        namespace Condition
         {
-            public class DAGWithSharedChildTest
+            public class DAGWithSharedChild
             {
-                public DAGWithSharedChildTest()
+                public DAGWithSharedChild()
                 {
                     root = TestNodeFactory.CreateDAGWithSharedChild();
                 }
@@ -690,11 +690,11 @@ namespace DigDAGTest
             }
         }
 
-        public class PruneTest
+        namespace Prune
         {
-            public class DAGWithSharedChildTest
+            public class DAGWithSharedChild
             {
-                public DAGWithSharedChildTest()
+                public DAGWithSharedChild()
                 {
                     root = TestNodeFactory.CreateDAGWithSharedChild();
                 }
@@ -762,12 +762,12 @@ namespace DigDAGTest
                 }
             }
         }
-    
-        public class VerfiyTest
+
+        namespace Verfiy
         {
-            public class TreeTest
+            public class Tree
             {
-                public TreeTest()
+                public Tree()
                 {
                     root = TestNodeFactory.CreateTree();
                 }
@@ -781,9 +781,9 @@ namespace DigDAGTest
                 }
             }
 
-            public class DAGWithSharedChildTest
+            public class DAGWithSharedChild
             {
-                public DAGWithSharedChildTest()
+                public DAGWithSharedChild()
                 {
                     root = TestNodeFactory.CreateDAGWithSharedChild();
                 }
@@ -796,6 +796,7 @@ namespace DigDAGTest
                     Assert.True(DagInspector.Verify(root));
                 }
             }
+
             public class DAGWithManyParnetSharingChild
             {
                 public DAGWithManyParnetSharingChild()
@@ -812,9 +813,9 @@ namespace DigDAGTest
                 }
             }
 
-            public class DAGWithDuplicateSharingChildTwiceTest
+            public class DAGWithDuplicateSharingChildTwice
             {
-                public DAGWithDuplicateSharingChildTwiceTest()
+                public DAGWithDuplicateSharingChildTwice()
                 {
                     root = TestNodeFactory.CreateDAGWithDuplicateSharingChildTwice();
                 }
@@ -828,9 +829,9 @@ namespace DigDAGTest
                 }
             }
 
-            public class GraphWithFarCycleTest
+            public class GraphWithFarCycle
             {
-                public GraphWithFarCycleTest()
+                public GraphWithFarCycle()
                 {
                     root = TestNodeFactory.CreateGraphWithFarCycle();
                 }
@@ -844,9 +845,9 @@ namespace DigDAGTest
                 }
             }
 
-            public class GraphWithSelfCycleTest
+            public class GraphWithSelfCycle
             {
-                public GraphWithSelfCycleTest()
+                public GraphWithSelfCycle()
                 {
                     root = TestNodeFactory.CreateGraphWithSelfCycle();
                 }
@@ -860,9 +861,9 @@ namespace DigDAGTest
                 }
             }
 
-            public class GraphWithParentAndChildCycleTest
+            public class GraphWithParentAndChildCycle
             {
-                public GraphWithParentAndChildCycleTest()
+                public GraphWithParentAndChildCycle()
                 {
                     root = TestNodeFactory.CreateGraphWithParentAndChildCycle();
                 }
