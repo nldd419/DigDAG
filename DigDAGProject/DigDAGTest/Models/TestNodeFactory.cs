@@ -558,6 +558,30 @@ namespace DigDAGTest.Models
             return node0;
         }
 
+        public static TestNode CreateDAGWithDuplicateSharingChildTwice()
+        {
+            /*
+             * [0]
+             *  |___
+             *  |   |
+             *  |___|_[1]
+             *         |___
+             *         |   |
+             *         |___|_[2]
+             */
+
+            var node0 = new TestNode(0);
+            var node1 = new TestNode(1);
+            var node2 = new TestNode(2);
+
+            node0.AddChild(node1);
+            node0.AddChild(node1);
+            node1.AddChild(node2);
+            node1.AddChild(node2);
+
+            return node0;
+        }
+
         public static TestNode CreateGraphWithFarCycle()
         {
             /*
