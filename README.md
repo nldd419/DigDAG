@@ -1,5 +1,7 @@
 # DigDAG
-C# library for Directed acyclic graph (DAG)
+C# library for Directed acyclic graph (DAG)  
+
+![Build and Test Status](https://github.com/nldd419/DigDAG/actions/workflows/dotnet.yml/badge.svg)
 
 ## Usage
 First, you have to implement `IDagNode` which represents a node of a graph.
@@ -191,7 +193,6 @@ I'm new to GitHub, so I may take some time to merge your Pull request.
 
 ## TODO
 - Add automatic ascii tree creation.
-- Add CI
 
 ## Others
 Since currently the library version is 0.0.1, there is no built binary and you have to compile it by yourself.
