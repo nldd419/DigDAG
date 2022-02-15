@@ -46,7 +46,7 @@ namespace DigDAG
         /// <param name="depthFirstSearch">True if you use a depth-first search method for tree traversing, otherwise a breadth-first search method is used.</param>
         public static void InspectAll(IDagNode firstNode, InspectAction inspector, bool depthFirstSearch = true)
         {
-            InspectWhere(firstNode, inspector, (r, d, i, p) => true, (r, d, i, p) => false, depthFirstSearch);
+            InspectWhere(firstNode, inspector, (n, d, i, p) => true, (n, d, i, p) => false, depthFirstSearch);
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace DigDAG
         /// <param name="depthFirstSearch">True if you use a depth-first search method for tree traversing, otherwise a breadth-first search method is used.</param>
         public static void InspectWhere(IDagNode firstNode, InspectAction inspector, ConditionFunc condition, bool depthFirstSearch = true)
         {
-            Inspect(firstNode, inspector, condition, (r, d, i, p) => false, depthFirstSearch);
+            Inspect(firstNode, inspector, condition, (n, d, i, p) => false, depthFirstSearch);
         }
 
         /// <summary>
